@@ -15,7 +15,8 @@
     "wintersmith": "./bin/wintersmith"
   },
   "scripts": {
-    "prepublish": "node ./bin/dev/compile_coffee"
+    "prepublish": "npm run snyk-protect; node ./bin/dev/compile_coffee",
+    "snyk-protect": "snyk protect"
   },
   "directories": {
     "lib": "./lib/"
@@ -42,12 +43,14 @@
     "rimraf": "~2.5.4",
     "server-destroy": "~1.0.1",
     "slugg": "~1.1.0",
-    "winston": "~2.3.0"
+    "winston": "~2.3.0",
+    "snyk": "^1.190.0"
   },
   "devDependencies": {
     "shelljs": "0.1.x"
   },
   "engine": {
     "node": ">=0.8"
-  }
+  },
+  "snyk": true
 }
